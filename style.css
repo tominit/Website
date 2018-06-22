@@ -1,0 +1,124 @@
+*{
+     
+}
+body{
+    background-color: #161616;
+    font-family: 'Josefin Sans', sans-serif; 
+    margin: 0;
+    padding: 0;
+}
+
+.card{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 300px;
+    height: 400px;
+    transform-style: preserve-3d;
+    perspective: 600px;
+    transition: 0.5s;
+}
+
+.card .front{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #000;
+    backface-visibility: hidden;
+    transform: rotateX(0deg);
+    transition: 0.5s;
+}
+.card:hover .front{
+    transform: rotateX(-180deg);
+}
+.card .back{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    backface-visibility: hidden;
+    transform: rotateX(180deg);
+    transition: 0.5s;
+}
+
+.card:hover .back{
+    transform: rotateX(0deg);
+}
+
+.card .back .details{
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.card .back .details h2{
+    margin: 0;
+    padding: 0;
+    font-style: 24px;
+    color: #ffffff;
+}
+
+img{
+    width: 300px;
+    height: 400px;
+}
+
+div{
+    color: white;
+}
+.grid{
+    display: grid;
+    width: 100%;
+    max-width: 920px;
+    margin: 10% auto;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 200px 200px auto 200px 200px auto 200px 200px auto;
+    grid-gap: 25px;
+
+    
+} 
+
+.flipcard {
+    position: relative;
+    width: 220px;
+    height: 160px;
+    perspective: 500px;
+  }
+  .flipcard.v:hover .front, .flipcard.v.flip .front{
+    transform: rotateX(180deg);
+  }
+  .flipcard.v:hover .back, .flipcard.v.flip .back{
+    transform: rotateX(0deg);
+  }
+  .flipcard.v .back{
+    transform: rotateX(-180deg);
+  }
+  .flipcard.h:hover .front, .flipcard.h.flip .front{
+    transform: rotateY(180deg);
+  }
+  .flipcard.h:hover .back, .flipcard.h.flip .back{
+    transform: rotateY(0deg);
+  }
+  .flipcard.h .back{
+    transform: rotateY(-180deg);
+  }
+  .flipcard .front, .flipcard .back
+  {
+    position:absolute;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    transition: all 0.5s ease-in;
+    color: white;
+    background-color: #000;
+    backface-visibility: hidden;
+  }
